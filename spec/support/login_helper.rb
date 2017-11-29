@@ -17,6 +17,7 @@ module LoginHelper
 
   def visit_signin
     visit '/'
+    binding.pry
     click_link('Sign In')
   end
 

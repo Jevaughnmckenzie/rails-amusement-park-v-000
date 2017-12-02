@@ -36,6 +36,7 @@ class Ride < ActiveRecord::Base
 
   	message << "Sorry. You do not have enough tickets to ride the #{attraction.name}." unless enough_tickets?
   	message << "Sorry. You are not tall enough to ride the #{attraction.name}." unless enough_height?
+  	
 
   	if !enough_tickets? && !enough_height?
   		message.gsub!(/\.\w+/, '')
@@ -43,7 +44,11 @@ class Ride < ActiveRecord::Base
   		update_nausea
   		update_happiness
   		update_tickets
+  		message << "Thanks for riding the #{self.attraction.name}!"
   	end
+
+  	self.user.messages = message
+  	self.user.save
 
   	message
   end

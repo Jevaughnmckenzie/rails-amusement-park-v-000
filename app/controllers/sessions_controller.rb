@@ -15,4 +15,12 @@ class SessionsController < ApplicationController
   		redirect_to '/signin'
   	end
   end
+
+  def destroy
+  	if current_user.present?
+  		session.delete(:user_id)
+  	end
+
+  	redirect_to '/'
+  end
 end

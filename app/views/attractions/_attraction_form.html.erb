@@ -1,0 +1,18 @@
+<%= form_for(@attraction) do |u| %>
+	<%= u.label :name %>
+	<%= u.text_field :name %>
+
+	<%= u.label :min_height %>
+	<%= u.text_field :min_height %>
+
+	<%= u.label :happiness_rating %>
+	<%= u.text_field :happiness_rating %>
+
+	<%= u.label :nausea_rating %>
+	<%= u.text_field :nausea_rating %>
+
+	<%= u.label :tickets %>
+	<%= u.text_field :tickets %>
+
+	<%= u.submit %>
+<% end %>

@@ -1,6 +1,8 @@
 <%= @user.name %>
 <%= 'ADMIN' if @user.admin %>
 
+<h2><%= @user.messages if @user.messages.present? %></h2>
+
 <ul>
 	<li>Height: <%= @user.height %></li>
 	<li>Nausea: <%= @user.nausea %></li>
@@ -8,6 +10,8 @@
 	<li>Tickets: <%= @user.tickets %></li>
 	<li>Mood: <%= @user.mood %></li>
 </ul>
+
+<%= link_to('See attractions', attractions_path) %>
 
 <%= link_to 'Log Out', logout_path %>
 <!-- <h2>Mood: <%= @user.mood %></h2> -->

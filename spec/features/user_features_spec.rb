@@ -213,8 +213,11 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
   end
 
   it "clicking on 'Go on this ride' updates the users ticket number" do
+
     click_link('See attractions')
+
     click_link("Go on #{@ferriswheel.name}")
+
     click_button("Go on this ride")
     expect(page).to have_content("Tickets: 13")
   end

@@ -1,0 +1,13 @@
+<h2><%= @attraction.name %></h2>
+
+
+<% if @user.admin == true %>
+
+
+	<%= link_to 'Edit Attraction', edit_attraction_path(@attraction) %>
+<% else %>
+	<%= form_for(@user, html: { class: 'button_to'})  do |b| %>
+		<%= b.hidden_field :attraction, value: @attraction.id %>
+		<%= b.submit 'Go on this ride' %>
+	<% end %>
+<% end %>
